@@ -236,7 +236,10 @@ async function cfm2(){
    let re = await get(a, "chouqu&comm_id=1&isyuyue=0")
    if(re.prizename){
             prize +=re.prizename
-         }else{
+         }else if (re.msg){
+             prize +=re.msg
+             break
+          }else{
            prize +="-无-" //未中奖
         }
    }
@@ -254,7 +257,7 @@ async function other() {
      result += await jhy(id)
     }
     
-    await cfm2()
+   // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery2("lottery", 28, [1, 2, 3, 4,5],"\n[1212999]")//79979
   // await get("lottery/m","DailyYuyueLing&comm_id=28&isyuyue=1&id=5")
