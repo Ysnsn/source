@@ -134,7 +134,7 @@ async function sw2(id){
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
- for (id of [67,136,141,144,146]) {
+ for (id of [67,136,141,146]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 //50黎明觉醒 明日之后127 138炉石 //136重返帝国
@@ -145,11 +145,11 @@ async function fx() {
  //result += await sw2(50)  //镇魂街67     王牌115
 // result += await sw3(124)   122黑月
 //139数码宝贝
-/*
- for (id of [76]) {
+
+ for (id of [147]) {
    result +=await sw(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
- */
+ 
  
 }
 
