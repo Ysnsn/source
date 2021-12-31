@@ -145,11 +145,11 @@ async function fx() {
  //result += await sw2(50)  //镇魂街67     王牌115
 // result += await sw3(124)   122黑月
 //139数码宝贝
-
+/*
  for (id of [147]) {
    result +=await sw(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
- 
+ */
  
 }
 
