@@ -12,8 +12,8 @@ async function jhy(id) {
             let res = await get("zhuli", `choujiang&isdown=1&comm_id=${id}`)
             if(res.prize){
             prize +=res.prize+"-"
-            }else if (res.msg){
-              prize +=res.msg
+            }else if (res.info){
+              prize +=res.info
               break
           }else{
            prize +="-无-" //未中奖
@@ -251,12 +251,12 @@ async function cfm2(){
 async function other() {
     await fx()
     await sleep(5000)
-    
+    /*
     for (id of [47]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    
+    */
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
    // await lottery("lottery", 29, [1, 2, 3, 4, 5, 6],"\n[517517]")

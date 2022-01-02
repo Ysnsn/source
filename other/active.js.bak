@@ -145,11 +145,11 @@ async function fx() {
  //result += await sw2(50)  //镇魂街67     王牌115
 // result += await sw3(124)   122黑月
 //139数码宝贝
-
+/*
  for (id of [147]) {
    result +=await sw(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
- 
+ */
  
 }
 
@@ -251,12 +251,12 @@ async function cfm2(){
 async function other() {
     await fx()
     await sleep(5000)
-    
+    /*
     for (id of [47]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    
+    */
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
    // await lottery("lottery", 29, [1, 2, 3, 4, 5, 6],"\n[517517]")
