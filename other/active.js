@@ -259,6 +259,8 @@ async function other() {
     */
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
+    await lottery("lottery", 32, [1, 2, 3, 4, 5],"\n[2022917]")
+    await lottery("lottery", 33, [1, 2, 3, 4, 5],"\n[220111]")
     await lottery("lottery", 31, [1, 2, 3, 4, 5, 6,7,8],"\n[220105]")
 
   //  await lottery("lottery", 26, [1, 2, 3, 4, 5, 6,7],"\n[888288]")
