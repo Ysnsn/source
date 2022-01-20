@@ -24,6 +24,7 @@ async function jhy(id) {
     return prize
 }
 
+
 //快爆粉丝福利80080
 async function lottery(a, b, c,d) {
     prize=""
