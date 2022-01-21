@@ -279,6 +279,7 @@ async function other() {
      console.log("榜单游戏\n\n")
      await gt()
     }
+    await glist(3)
     
 
 }
