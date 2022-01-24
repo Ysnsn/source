@@ -253,11 +253,6 @@ async function other() {
     await fx()
     await sleep(5000)
     
-    for (id of [48]){
-     console.log(" 助力抽奖通用\n\n")
-     result += await jhy(id)
-    }
-    
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
  //   await lottery("lottery", 32, [1, 2, 3, 4, 5],"\n[2022917]")
@@ -280,6 +275,9 @@ async function other() {
      await gt()
     }
     await glist(3)
-    
+    for (id of [48]){
+     console.log(" 助力抽奖通用\n\n")
+     result += await jhy(id)
+    }
 
 }
