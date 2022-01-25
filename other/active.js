@@ -265,9 +265,11 @@ async function xinnian() {
     for (id of str) {
         await get(aid, "playgame&gameid=" + id.split("_")[2])
     }
-    await sleep(60000)
+    await sleep(1000)
     for (id of str) {
-        await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
+        //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
+        await get(aid, "lingquyuyue&gameid=" + id.split("_")[2])
+        
     }
     let info = await get(aid, "login")
     if (info.key == "ok") {
