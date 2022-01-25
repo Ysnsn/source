@@ -261,14 +261,15 @@ async function xinnian() {
     let res = await $http.get(
         "https://huodong3.3839.com/n/hykb/2022xinnian/m/index.php"
     );
-    str = res.data.match(/prize1_lingqu_(\d+)/g);
-    for (id of str) {
-        await get(aid, "playgame&gameid=" + id.split("_")[2])
+    str1 = res.data.match(/btn shiwan(\d+)/g);
+    str = res.data.match(/btn yygameid-(\d+)/g);
+    for (id of str1) {
+        await get(aid, "playgame&gameid=" + id.split("wan")[1])
     }
     await sleep(1000)
     for (id of str) {
         //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
-        await get(aid, "lingquyuyue&gameid=" + id.split("_")[2])
+        await get(aid, "lingquyuyue&gameid=" + id.split("-")[1])
         
     }
     let info = await get(aid, "login")
