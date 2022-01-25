@@ -248,11 +248,38 @@ async function cfm2(){
    console.log(result)
 }
 
+async function xinnian() {
+    aid = "2022xinnian/m"
+    await get(aid, "login")
+    await get(aid, "gofuli&resure=1")
+    await get(aid, "share")
+    await get(aid, "gozhongcao&resure=1")
+    await get(aid, "xinshou&resure=1")
+    await get(aid, "guangczzl")
+    await get(aid,"guang&resure=1")
+    let res = await $http.get(
+        "https://huodong3.3839.com/n/hykb/2022xinnian/m/index.php"
+    );
+    str = res.data.match(/prize1_lingqu_(\d+)/g);
+    for (id of str) {
+        await get(aid, "playgame&gameid=" + id.split("_")[2])
+    }
+    await sleep(60000)
+    for (id of str) {
+        await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
+    }
+    let info = await get(aid, "login")
+    if (info.key == "ok") {
+        msg = `\n【庙会】：福气[${info.config.tizhong}]  爆珠[${info.config.maoqiu}]`
+        result += msg
+        console.log(msg)
+    }
+}
 
 async function other() {
     await fx()
     await sleep(5000)
-    
+    await xinnian()
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 34, [1, 2, 3, 4, 5],"\n[20220124]")
