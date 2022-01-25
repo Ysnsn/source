@@ -270,7 +270,7 @@ async function xinnian() {
     }
     let info = await get(aid, "login")
     if (info.key == "ok") {
-        msg = `\n【庙会】：体重[${info.config.tizhong}]  毛球[${info.config.maoqiu}]`
+        msg = `\n【庙会】：福气[${info.config.tizhong}]  爆珠[${info.config.maoqiu}]`
         result += msg
         console.log(msg)
     }

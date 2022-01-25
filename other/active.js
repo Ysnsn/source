@@ -251,6 +251,7 @@ async function cfm2(){
 async function xinnian() {
     aid = "2022xinnian/m"
     await get(aid, "login")
+    await get(aid, "giftcode&shareCode=da765de95024f")
     await get(aid, "gofuli&resure=1")
     await get(aid, "share")
     await get(aid, "gozhongcao&resure=1")

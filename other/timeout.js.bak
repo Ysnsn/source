@@ -19,11 +19,6 @@ async function kbzl(){
     await sleep(6000)
     await get(a, "FlyQdb&id=5")
     await get(a, "FlyQdbLing&id=5")
-    await get(a, "FlyGameCateDialog&id=10")
-    await sleep(6000)
-    await get(a, "FlyGameCate&id=10")
-    await get(a, "FlyGameCateLing&id=10")
-    
     await get(a, "FlyBylDialog&id=6")
     await sleep(6000)
     await get(a, "FlyByl&id=6")
