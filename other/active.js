@@ -284,6 +284,8 @@ async function other() {
     await fx()
     await sleep(5000)
     await xinnian()
+    await get("2022sfshare","login")
+    await get("2022sfshare","share")
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 34, [1, 2, 3, 4, 5],"\n[20220124]")
