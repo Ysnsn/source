@@ -270,8 +270,10 @@ async function xinnian() {
     for (id of str) {
         //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
         await get(aid, "lingquyuyue&gameid=" + id.split("-")[1])
-        
-    }
+    }  
+    for (i of ["111175","126324","84747"]){
+          await get(aid, "lingqushiwan&gameid=" + i)
+        }
     let info = await get(aid, "login")
     if (info.key == "ok") {
         msg = `\n【庙会】：福气[${info.config.tizhong}]  爆珠[${info.config.maoqiu}]`
