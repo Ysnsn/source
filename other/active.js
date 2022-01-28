@@ -12,9 +12,6 @@ async function jhy(id) {
             let res = await get("zhuli", `choujiang&isdown=1&comm_id=${id}`)
             if(res.prize){
             prize +=res.prize+"-"
-            }else if (res.info){
-              prize +=res.info
-              break
           }else{
            prize +="-无-" //未中奖
             }
@@ -312,7 +309,7 @@ async function other() {
      await gt()
     }
     await glist(3)
-    for (id of [48,50]){
+    for (id of [48,49,50]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
