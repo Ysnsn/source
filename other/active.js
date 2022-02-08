@@ -285,6 +285,15 @@ async function other() {
     await xinnian()
     await get("2022sfshare","login")
     await get("2022sfshare","share")
+    for (i = 0; i < 5; i++) {
+       await get("yuyue2020/m","invite&comm_id=154&isyuyue=0&isfx=1&testkey=4399NoneDeviceId")
+       let in = await get("yuyue2020/m","choujiang&comm_id=154&isyuyue=0&isdown=0&isdownonly=0&testkey=4399NoneDeviceId")
+       if(in.prize){
+            result += in.prize+"-"
+        }else{
+           result +="-无-" //未中奖
+        }
+    }
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 37, [1, 2, 3, 4,5,6],"\n[20220129]")
