@@ -126,8 +126,19 @@ async function sw2(id){
  
     return pri2
 }
-
-
+async function sw3(id){
+   pri = `\n[预活id${id}]`
+   for (i = 0; i < 5; i++) {
+       await get("yuyue2020/m",`invite&comm_id=${id}&isyuyue=0&isfx=1&testkey=4399NoneDeviceId`)
+       let rrr = await get("yuyue2020/m",`choujiang&comm_id=${id}&isyuyue=0&isdown=0&isdownonly=0&testkey=4399NoneDeviceId`)
+       if(rrr.prize){
+            pri += rrr.prize+"-"
+        }else{
+           pri +="-无-" //未中奖
+        }
+    }
+    return pri
+}
 
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
@@ -143,11 +154,11 @@ async function fx() {
  //result += await sw2(50)  //镇魂街67     王牌115
 // result += await sw3(124)   122黑月
 //139数码宝贝
-/*
- for (id of [153]) {
-   result +=await sw(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
+
+ for (id of [154,155]) {
+   result +=await sw3(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
- */
+ 
  
 }
 
@@ -285,21 +296,11 @@ async function other() {
     await xinnian()
     await get("2022sfshare","login")
     await get("2022sfshare","share")
-    for (i = 0; i < 5; i++) {
-       await get("yuyue2020/m","invite&comm_id=154&isyuyue=0&isfx=1&testkey=4399NoneDeviceId")
-       let rrr = await get("yuyue2020/m","choujiang&comm_id=154&isyuyue=0&isdown=0&isdownonly=0&testkey=4399NoneDeviceId")
-       if(rrr.prize){
-            result += rrr.prize+"-"
-        }else{
-           result +="-无-" //未中奖
-        }
-    }
+    
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 37, [1, 2, 3, 4,5,6],"\n[20220129]")
    await lottery("lottery", 36, [1, 2, 3, 4],"\n[222668]")
-   await lottery("lottery", 35, [1, 2, 3, 4, 5,6],"\n[220128]")
-   // await lottery("lottery", 34, [1, 2, 3, 4, 5],"\n[20220124]")
     await lottery("lottery", 33, [1, 2, 3, 4, 5],"\n[220111]")
      
     await lottery("lottery2", 3, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[41616]") 
