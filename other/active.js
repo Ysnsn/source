@@ -316,7 +316,7 @@ async function other() {
      console.log("榜单游戏\n\n")
      await gt()
     }
-    await glist(3)
+    //await glist(3)
     for (id of [48]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
