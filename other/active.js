@@ -140,27 +140,6 @@ async function sw3(id){
     return pri
 }
 
-//游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
-async function fx() { 
- //鬼泣 一起来飞车111
- for (id of [67,136,141]) {
-   result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
- }
-//50黎明觉醒 明日之后127 138炉石 //136重返帝国
- //魔力宝贝141
- //144幻塔
- //result += await sw2(133) //荣耀新三国133,134
-   //三国无双125 128  哈利波特45 132 134
- //result += await sw2(50)  //镇魂街67     王牌115
-// result += await sw3(124)   122黑月
-//139数码宝贝
-
- for (id of [154,155]) {
-   result +=await sw3(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
- }
- 
- 
-}
 
 
 async function ddd(id) {
@@ -289,6 +268,29 @@ async function xinnian() {
         console.log(msg)
     }
 }
+
+//游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
+async function fx() { 
+ //鬼泣 一起来飞车111
+ for (id of [67,141]) {
+   result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
+ }
+//50黎明觉醒 明日之后127 138炉石 //136重返帝国
+ //魔力宝贝141
+ //144幻塔
+ //result += await sw2(133) //荣耀新三国133,134
+   //三国无双125 128  哈利波特45 132 134
+ //result += await sw2(50)  //镇魂街67     王牌115
+// result += await sw3(124)   122黑月
+//139数码宝贝
+
+ for (id of [154,155]) {
+   result +=await sw3(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
+ }
+ 
+ 
+}
+
 
 async function other() {
     await fx()
