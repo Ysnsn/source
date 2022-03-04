@@ -101,10 +101,10 @@ async function ad(){
  for (i = 0; i < 5; i++) {
    await task("广告奖励","\/missionApi\/action\/uploadAction",{
    "actionCode" : "watch_reward_ad",
-   "params" : "{\"mission_uuid\":\"376\",\"topon_ad_seat_uuid\":\"b615ffa7ee9c30\",\"watch_status\":1}"
+   "params" : "{\"mission_uuid\":\"482\",\"topon_ad_seat_uuid\":\"b62189e37666d0\",\"watch_status\":1}"
    })
    await task("广告奖励领取","\/missionApi\/award\/accept",{
-   "missionUuid" : "376"
+   "missionUuid" : "482"
    })
  }
 }
