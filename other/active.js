@@ -310,7 +310,7 @@ async function other() {
    await lottery("lottery2", 9, [1, 2, 3, 4],"\n[130130]") 
    
     await lottery("lottery2", 3, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[41616]") 
-    await lottery("lottery2", 5, [1, 2, 3, 4, 5, 6, 7],"\n[037037]") 
+   // await lottery("lottery2", 5, [1, 2, 3, 4, 5, 6, 7],"\n[037037]") 
     await lottery("lottery2", 6, [1, 2, 3, 4, 5, 6,8],"\n[72020]") 
     
     await lottery("lottery2", 1, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[331330]") 
