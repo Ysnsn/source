@@ -298,7 +298,7 @@ async function zn5() {
       let info = await get(aid, 'login',true)
       //查询
       if (info.key == 'ok') {
-        msg = `\n5周年：卡片 ${info.config.mykpnum} 奖励 ${pn}`
+        msg = `\n5周年：卡片 ${info.config.mykpnum} 奖励 ${pn}  \n`
         result += msg
         console.log(msg)
       }
