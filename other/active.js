@@ -291,7 +291,7 @@ async function zn5() {
         }
         //勋章
         if (info1.config.liuyanling != 1) {
-          await get(aid, 'chaundi&liuyan=五周年快乐快乐(ง+•̀_•́)ง&resource=0')
+          await get(aid, 'chaundi&liuyan=五周年快乐快乐周年快乐(ง+•̀_•́)ง&resource=0')
           await get(aid, 'lingquliuyan')
         }
       }
@@ -332,7 +332,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-    
+    zn5()
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 43, [1, 2, 3, 4,5,6,7],"\n[220318]")
@@ -366,6 +366,5 @@ async function other() {
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    zn5()
 
 }
