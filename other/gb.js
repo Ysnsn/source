@@ -5,7 +5,7 @@ const yargs = require('yargs');
 let argv = yargs.argv._
 global.config = yaml.load(fs.readFileSync('./config.yml', 'utf8'));
 const $http=require("axios")
-const hyck = config.hykb2.scookie
+const hyck = config.hykb7.scookie
 let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 //照料id 我没加好友所以随机取得 第一个是我,不建议改ヽ(*´з｀*)ﾉ
 buid = [21039293,48653684,44191145,54216701,54184381,38442812,34977383,54099572,54060137,18344113,53950826,53334988,49100316,24158995,53043395,53746196,7495782,53752398,13268805,53540861,53169378,53481728,53480955,53236037,5015419,17998323,142234,53043027,53022651,52883552,52919017,52883915,2987459,52863870,52787172,52782808,52694050,20997885,51870224,51854475,45610785,51060995,51041635,22673480,26442566,49469272,49614447,2596430,49728164,49486242,49662192,49613978,46353292,49343258,45415658,49011759,48694743,48557745,39246562,48714555,7081589,19159172,1779737,48346086,48339861,47879039,23201290,48214589,48204930,48075558,576273,48074580,48043586,47937184,45231130,47937216,47236557,47889444,1656229,12094940,113403,35309397,47126286,39092668,46987060,46938478,33318766,39092819,24164451,46816636,20041171,1991977,45236927,45229941,45416573,45535123,11222716,45230227,29935848,32441297,23450463,45461447,8251603,45783763,14409304,12661364,45473957,45751761,23079057,140449,27139868,44840858,21273234,45078335,44758815,44838804,45234308,45466314,45562418,45045871,45507665,45263948,45249695,44042408,9169383,44761568,44471412,44440362]
@@ -76,8 +76,8 @@ async function dh(){
     //await get("lottery/m","mycode&comm_id=10&isyuyue=0") //80080
   //  await get("zhuli","mycode&comm_id=41")
    //await get("yuyue2020/m","mycode&comm_id=17&isyuyue=0&testkey=4399NoneDeviceId")
-      await get("lottery/m","duihuanprize&dhid=5&comm_id=29&resure=1&isyuyue=0")
-      //await get("lottery/m","duihuanprize&dhid=1&comm_id=14&resure=1&isyuyue=0")  
+      await get("lottery/m","duihuanprize&dhid=1&comm_id=37&resure=1&isyuyue=0")
+         //await get("lottery/m","duihuanprize&dhid=1&comm_id=14&resure=1&isyuyue=0")  
      // await get("lottery/m","duihuanprize&dhid=1&comm_id=10&resure=1&isyuyue=0")  //25525 点卷
   }
 }
@@ -235,6 +235,18 @@ async function ss(id){
 
 async function kbzl(){
     a ="xsrw"
+    /*
+    await get(a, "FlyPlayHomeDialog&id=13")
+    await sleep(1000)
+    await get(a, "FlyPlayHome&id=13")
+    await get(a, "FlyPlayHomeLing&id=13")
+    */
+    await get(a, "FlyGameCateDialog&id=10")
+    await sleep(1000)
+    await get(a, "FlyGameCate&id=10")
+    await get(a, "FlyGameCateLing&id=10")
+    //await get(a, "CloseZyw")
+    /*
     await get(a, "LookVideoDialog&id=1")
     await sleep(6000)
     await get(a, "LookVideo&id=1")
@@ -261,6 +273,7 @@ async function kbzl(){
     await get(a, "BandWeixinLing&id=8")
     await get(a, "CloseZyw")
     await get(a, "SuperBaomihuaLing")
+    */
 }
 //sw2(2746130558)
 //sw2(703820493)
@@ -281,7 +294,7 @@ async function kbzl(){
 //快爆粉丝福利80080
 async function lottery(a, b, c,d) {
     prize=""
-    result =""
+    //result =""
     await get(`${a}/m`, `login&comm_id=${b}&isyuyue=0`)
      await get(`${a}/m`, `jumpbdqq&comm_id=${b}&isyuyue=0`)
     for (i of c) {
@@ -362,7 +375,7 @@ async function ys() {
     }
 }
 async function cfm(){
-  prize="\n穿越火线: "
+  prize="\n穿越$火线: "
   a= "cfm/m"
   await get(a, "login&comm_id=1&isyuyue=0")
   await get(a, "DailyQiandao&comm_id=1&isyuyue=0&id=1")
@@ -493,4 +506,115 @@ async function jhy(id) {
 }
 //jhy(47)
 //sw4(146)
-dh()
+//dh()
+async function glist(id) {
+    for (typeid of ["qq", "wx", "weibo"]) {
+        await get("glist", `share&typeid=${typeid}&comm_id=${id}`)
+        await sleep(1000)
+    }
+    await get("glist", `receiveBmh&comm_id=${id}`)
+
+}
+
+async function xinnian() {
+  
+    aid = "2022xinnian/m"
+    await get(aid, "login")
+    await get(aid, "giftcode&shareCode=da765de95024f")
+    await get(aid, "gofuli&resure=1")
+    await get(aid, "share")
+    await get(aid, "gozhongcao&resure=1")
+    await get(aid, "xinshou&resure=1")
+    await get(aid, "guangczzl")
+    await get(aid,"guang&resure=1")
+    let res = await $http.get(
+        "https://huodong3.3839.com/n/hykb/2022xinnian/m/index.php"
+    );
+    str1 = res.data.match(/btn shiwan(\d+)/g);
+    str = res.data.match(/btn yygameid-(\d+)/g);
+    for (id of str1) {
+        await get(aid, "playgame&gameid=" + id.split("wan")[1])
+    }
+    await sleep(1000)
+    for (id of str) {
+        //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
+        await get(aid, "lingquyuyue&gameid=" + id.split("-")[1])
+    }
+     await get(aid, "lingqushiwan&gameid=" + str1[0].split("wan")[1])
+     await get(aid, "lingqushiwan&gameid=" + str1[4].split("wan")[1])
+     await get(aid, "lingqushiwan&gameid=" + str1[5].split("wan")[1])
+    let info = await get(aid, "login")
+    if (info.key == "ok") {
+        msg = `\n【庙会】：福气[${info.config.tizhong}]  爆珠[${info.config.maoqiu}]`
+        result += msg
+        console.log(result)
+    }
+}
+async function tr(){
+for (i = 0; i < 5; i++) {
+       await get("yuyue2020/m","invite&comm_id=154&isyuyue=0&isfx=1&testkey=4399NoneDeviceId")
+      let res= await get("yuyue2020/m","choujiang&comm_id=154&isyuyue=0&isdown=0&isdownonly=0&testkey=4399NoneDeviceId")
+    
+          if(res.prize){
+            result += res.prize+"-"
+        }else{
+           result +="-无-" //未中奖
+        }
+        console.log(result)
+        
+    }
+  }
+//xinnian()
+//kbzl()
+//jhy(50)
+//jhy(49)
+//"lottery("lottery2", 7, [1, 2, 3, 4, 5, 6],"\n[618618]") 
+//lottery("lottery2", 8, [1, 2, 3, 4, 5, 6,7,8],"\n[120120]") 
+//lottery("lottery2", 9, [1, 2, 3, 4],"\n[130130]") 
+ 
+//tr()
+
+//sw3(142)
+async function q(){
+  await lottery("lottery", 43, [1, 2, 3, 4,5,6,7],"\n[220318]")
+    //await lottery("lottery", 42, [1, 3, 4,2],"\n[1212999]")
+    await lottery("lottery", 44, [1, 2, 3, 4,5,6,7],"\n[856888]")
+    await lottery("lottery", 45, [1, 2, 3, 4,5,6,7],"\n[221011]")
+}
+
+async function zn5() {
+      console.log('\n--------5周年活动开始--------\n')
+      aid = '5zhounian/m'
+      await get(aid, 'login')
+      await get(aid, 'share')
+      for (i = 5; i < 14; i++) {
+        await get(aid, 'DailyAppJump&id=' + i)
+        await get(aid, 'DailyAppLing&id=' + i)
+      }
+
+      pn = ''
+      info1 = await get(aid, 'login',true)
+      if (info1.key == 'ok') {
+        mh = info1.config.mh
+        console.log('可抽取盲盒次数：' + mh)
+        //开盲盒
+        for (k = 0; k < mh; k++) {
+          let cq = await get(aid, 'chouqu')
+          if (cq.key == 'ok') pn += cq.prizename + '  '
+        }
+        //勋章
+        if (info1.config.liuyanling != 1) {
+          await get(aid, 'chaundi&liuyan=五周年快乐快乐周年快乐(ง+•̀_•́)ง&resource=0')
+          await get(aid, 'lingquliuyan')
+        }
+      }
+      let info = await get(aid, 'login',true)
+      //查询
+      if (info.key == 'ok') {
+        msg = `5周年：卡片 ${info.config.mykpnum} 奖励 ${pn}  \n`
+        result += msg
+        console.log(msg)
+      }
+      console.log('\n--------5周年活动结束--------\n')
+}
+lottery("lottery", 42, [1, 3, 4,2,5, 6],"\n[1212999]")

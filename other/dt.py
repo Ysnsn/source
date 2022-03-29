@@ -163,7 +163,7 @@ def dati():
 
 
 
-for i in [1,2,3,4,5,6,7] :
+for i in [1,2,3,4,5,7] :
   file = open("config.yml", 'r', encoding="utf-8")
   file_data = file.read()
   file.close()
@@ -171,9 +171,7 @@ for i in [1,2,3,4,5,6,7] :
   i =str(i)
   print("\n\n------------------账号: ", i ," 开始签到----------- \n")
   scookie = data['hykb'+i]['scookie']
- # dati()
-  get("grow", "ac=DailyGamePlay&id=325")
-  get("grow", "ac=DailyGameLing&id=325")
+  dati()
 
 #  get("lottery/m","ac=duihuanprize&dhid=5&comm_id=30&resure=1&isyuyue=0")
  # get("lottery/m","ac=duihuanprize&dhid=4&comm_id=30&resure=1&isyuyue=0")
@@ -183,4 +181,7 @@ for i in [1,2,3,4,5,6,7] :
 
   #get("lottery/m","ac=duihuanprize&dhid=5&comm_id=19&resure=1&isyuyue=0")
 
+get("yearend2021","ac=send&content=开春虎已关照，大礼每人一套：一首喜庆曲调，一段幸福论调，一脸喜悦保票，一把理财金钥，一片祥云笼罩，一轮洪福高照。祝各位一年开怀大笑。&status=0")
+get("2022sfshare","ac=share")
+get("2022sfshare","ac=postComment&content=开春虎已关照，大礼每人一套：一首喜庆曲调，一段幸福论调，一脸喜悦保票，一把理财金钥，一片祥云笼罩，一轮洪福高照。祝各位一年开怀大笑。")
 

@@ -122,11 +122,11 @@ def ripe():
 #zp()
 #get("grow","ac=StartProduce&preNum=50&resure=1")
 #get("lottery/m","ac=duihuanprize&dhid=2&comm_id=16&resure=1&isyuyue=0")
-#get("lottery/m","ac=mycode&comm_id=16&isyuyue=0")
+
 def dh():
-  for id in [3,4,5] :
-   get("lottery/m",f"ac=duihuanprize&dhid=5&comm_id={id}&resure=1&isyuyue=0")
-   get("lottery/m",f"ac=duihuanprize&dhid=6&comm_id={id}&resure=1&isyuyue=0")
+  for id in [34] :
+   get("lottery/m",f"ac=duihuanprize&dhid=1&comm_id={id}&resure=1&isyuyue=0")
+   get("lottery/m",f"ac=duihuanprize&dhid=2&comm_id={id}&resure=1&isyuyue=0")
 
 
 # 特别任务一次
@@ -163,17 +163,77 @@ def dati():
 
 #ling()
 #ripe()
-#get("zhuli","ac=mycode&comm_id=46")
+#get("zhuli","ac=mycode&comm_id=50")
 #get("yuyue2020/m","ac=mycode&comm_id=144&isyuyue=0&testkey=4399NoneDeviceId")
 #get("cfm2/m", "ac=chouqu&comm_id=1&isyuyue=0")
 def bang(qq,tel=18822707053):
-   get("lottery/m",f"ac=submitzhanghao&comm_id=29&isyuyue=0&tel={tel}&name=王洋洋&address=河南省南阳市内乡县桃溪镇庙港邮政&qq={qq}")
-   get("lottery/m","ac=lianxifangshi&comm_id=29&isyuyue=0")
+   get("yuyue2020/m",f"ac=submitqq&comm_id=141&isyuyue=1&qq={qq}&testkey=4399NoneDeviceId")
+
+  # get("lottery2/m",f"ac=submitqq&comm_id=8&qq={qq}&isyuyue=0")
+   #get("lottery2/m",f"ac=submitqq&comm_id=7&qq={qq}&isyuyue=0")
+ #  get("lottery2/m",f"ac=submitqq&comm_id=9&qq={qq}&isyuyue=0")
+   
+ #  get("bangding","ac=login")
+   #get("bangding",f"ac=submitqq&t=7&tid=0&qq1={qq}&qq2={qq}")
+  # get("bangding","ac=querenaddress&i=3&t=7&tid=0")
+   #get("bangding","ac=postaddress&i=3&t=7&tid=0")
+  # get("zhuli",f"ac=submitzhanghao&comm_id=50&tel={tel}&name=王洋洋&address=河南省南阳市内乡县桃溪镇庙港邮政&qq={qq}")
+  # get("zhuli","ac=lianxifangshi&comm_id=50")
+
+  #get("lottery/m",f"ac=submitzhanghao&comm_id=37&isyuyue=0&tel={tel}&name=王洋洋&address=河南省南阳市内乡县桃溪镇庙港邮政&qq={qq}")
+#  get("lottery/m","ac=lianxifangshi&comm_id=37&isyuyue=0")
 #bang(2746130558,18822707053)
 #bang(703820493,15522865847)
 #bang(3245289855,15514122927)
 #bang(2548797991,13673777616)
-#bang(1517607179,17303777296)
-#get("bmhstore2","ac=mylog")
-get("yuyue2020/m","ac=mycode&comm_id=147&isyuyue=0&testkey=4399NoneDeviceId")
+#bang(3627240239,17303777296)
+#bang(1517607179,15522865847)
+#bang(2456295372)
+#get("2022xinnian/m","ac=lianxifangshi")
 
+#get("bmhstore2","ac=mylog")
+#get("yuyue2020/m","ac=mycode&comm_id=153&isyuyue=0&testkey=4399NoneDeviceId")
+
+#get("zhuli", "ac=choujiang&isdown=1&comm_id=47")
+'''
+get("yearend2021","ac=login")
+get("yearend2021","ac=send&content=虎年的思念扶摇直上九万里，把思念挂在天空最高的地方，时刻照耀着你，让每个角落都有我思念你的影子，时刻让你知道，我很想你，虎年大吉！&status=0")
+get("2022sfshare","ac=login")
+get("2022sfshare","ac=share")
+get("2022sfshare","ac=checkComment")
+get("2022sfshare","ac=postComment&content=虎年的思念扶摇直上九万里，把思念挂在天空最高的地方，时刻照耀着你，让每个角落都有我思念你的影子，时刻让你知道，我很想你，虎年大吉！")
+
+get("lottery/m", "ac=DailyAppJump&comm_id=35&isyuyue=0&id=1")
+get("lottery/m", "ac=DailyAppLing&comm_id=35&isyuyue=0&id=1")
+'''
+#dh()
+def s() :
+  while True:
+   get("2022xinnian/m", "ac=guangczzl")
+   get("2022xinnian/m","ac=guang&resure=1")
+   print("\n\n")
+   
+  
+#s()
+
+   
+#get("2022xinnian/m","ac=duihuan&dhid=51&resure=1")
+#get("lottery/m","ac=duihuanprize&dhid=2&comm_id=38&resure=1&isyuyue=0")
+#get("lottery/m","ac=duihuanprize&dhid=1&comm_id=38&resure=1&isyuyue=0")
+#get("2022sfshare","ac=openaward&pid=1")
+
+#get("2022xinnian/m","ac=dhcjq&resure=1")
+#get("zhuli","ac=lianxifangshi&comm_id=50")
+#get("myprize","ac=login")
+#get("lottery/m","ac=mycode&comm_id=39&isyuyue=0")
+#get("yuyue2020/m","ac=mycode&comm_id=136&isyuyue=1&testkey=4399NoneDeviceId")
+#get("yyzl4/m","ac=login&comm_id=15&isyuyue=0")
+#get("yyzl4/m","ac=giftCode&comm_id=15&shareCode=da765de95024f&isyuyue=0")
+#get("grow","ac=StartProduce&preNum=800&resure=1")
+
+#get("yuyue2020/m","ac=mycode&comm_id=142&isyuyue=1&testkey=4399NoneDeviceId")
+
+#get("lottery/m","ac=duihuanprize&resure=1&dhid=1&comm_id=45&isyuyue=0")
+#get("lottery/m","ac=duihuanprize&resure=1&dhid=2&comm_id=45&isyuyue=0")
+get("5zhounian/m","ac=lingqu5kp")
+get("5zhounian/m","ac=lingqu8kp")
