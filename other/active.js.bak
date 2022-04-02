@@ -362,7 +362,7 @@ async function other() {
      await gt()
     }
     //await glist(3)
-    for (id of [51]){
+    for (id of [52]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
