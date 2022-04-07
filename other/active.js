@@ -332,7 +332,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-    zn5()
+    //zn5()
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 49, [1, 2, 3,4],"\n[20224114]")
