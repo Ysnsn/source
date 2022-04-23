@@ -104,7 +104,7 @@ async function ad(){
    "params" : "{\"mission_uuid\":\"533\",\"topon_ad_seat_uuid\":\"b615ffa7ee9c30\",\"watch_status\":1}"
    })
    await task("广告奖励领取","\/missionApi\/award\/accept",{
-   "missionUuid" : "533"
+   "missionUuid" : "482"
    })
  }
 }
