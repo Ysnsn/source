@@ -338,6 +338,7 @@ async function other() {
    //await lottery("lottery", 52, [1,5,7,26,27,30,29],"\n[555321]")
    //await lottery("lottery", 51, [1, 2, 3, 4, 5],"\n[616555]") 
    //await lottery("lottery", 50, [1, 2, 3, 4],"\n[220429666]") 
+   await lottery("lottery2", 12, [1, 2, 3, 4],"\n[150150]") 
    await lottery("lottery2", 11, [1, 2, 3, 4],"\n[155155]") 
    await lottery("lottery2", 8, [1, 2, 3, 4, 5, 6,7,8],"\n[120120]") 
    await lottery("lottery2", 9, [1, 2, 3, 4],"\n[130130]") 
@@ -346,7 +347,7 @@ async function other() {
    // await lottery("lottery2", 5, [1, 2, 3, 4, 5, 6, 7],"\n[037037]") 
     await lottery("lottery2", 6, [1, 2, 3, 4, 5, 6,8],"\n[72020]") 
     
-    await lottery("lottery2", 1, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[331330]") 
+    //await lottery("lottery2", 1, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[331330]") 
     /*
     await lottery("lottery", 5, [1, 2, 3, 4, 6, 7,8,10,9],"\n王牌勋章[630630]") //630630
     await lottery("lottery", 4, [1, 2, 3, 4, 5, 6, 8,14,12],"\n补给箱[25525]") //25525
