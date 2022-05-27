@@ -366,6 +366,6 @@ async function other() {
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    await glist(4)
+    //await glist(4)
 
 }
