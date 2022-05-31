@@ -206,6 +206,36 @@ async function glist(id) {
     await get("glist", `receiveBmh&comm_id=${id}`)
 
 }
+//原神2.7 2022.05.31
+async function un(){
+ prize= "\n原神: "
+ await get("universal","login&comm_id=6")
+ await get("universal","WeChatValidate&comm_id=6")
+ await get("universal","signIn&comm_id=6")
+// await get("universal","signPost&comm_id=6&id=47")
+ await get("universal","taskGamePlayTime&comm_id=6&gameid=106235")
+ await get("universal","getTaskPrize&comm_id=6&id=26")
+ for (id of [27,28,29,30] ) {
+  await get("universal",`completeTask&comm_id=6&id=${id}`)
+  await get("universal",`getTaskPrize&comm_id=6&id=${id}`)
+ }
+ await get("universal","share&comm_id=6&share_type=task&task_id=30")
+ await get("universal","getTaskPrize&comm_id=6&id=30")
+  for (i = 0; i < 5; i++) {
+  let inf = await get("universal","getLuckyPrize&comm_id=6")
+  if (inf.key == 'ok') {
+        prize += inf.name+ '-'
+        result += prize
+        console.log(prize)
+   }else{
+    prize +="-无-"
+    result += prize
+    console.log(prize)
+    break
+    }
+  }
+ }
+
 async function cfm2(){
   prize="\n穿越火线: "
   a= "cfm2/m"
@@ -333,6 +363,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
+    await un()
     //zn5()
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
