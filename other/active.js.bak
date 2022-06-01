@@ -206,7 +206,7 @@ async function glist(id) {
     await get("glist", `receiveBmh&comm_id=${id}`)
 
 }
-
+//原神2.7 2022.05.31
 async function un(){
  prize= "\n原神: "
  await get("universal","login&comm_id=6")
@@ -225,15 +225,15 @@ async function un(){
   let inf = await get("universal","getLuckyPrize&comm_id=6")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
-        result += prize
-        console.log(prize)
+        
    }else{
     prize +="-无-"
-    result += prize
     console.log(prize)
     break
     }
   }
+  result += prize
+  console.log(prize)
  }
 
 async function cfm2(){

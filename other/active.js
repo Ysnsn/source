@@ -225,15 +225,14 @@ async function un(){
   let inf = await get("universal","getLuckyPrize&comm_id=6")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
-        result += prize
-        console.log(prize)
    }else{
     prize +="-无-"
-    result += prize
     console.log(prize)
     break
     }
   }
+  result += prize
+  console.log(prize)
  }
 
 async function cfm2(){
