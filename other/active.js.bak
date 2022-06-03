@@ -225,7 +225,6 @@ async function un(){
   let inf = await get("universal","getLuckyPrize&comm_id=6")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
-        
    }else{
     prize +="-无-"
     console.log(prize)
