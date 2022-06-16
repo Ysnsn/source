@@ -338,7 +338,7 @@ async function zn5() {
 async function fx() { 
  //鬼泣 一起来飞车111
  result +=await sw(167)
- for (id of [168,164,67,141,142]) {
+ for (id of [67,141,142]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 //50黎明觉醒 明日之后127 138炉石 //136重返帝国

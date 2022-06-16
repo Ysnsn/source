@@ -338,7 +338,7 @@ async function zn5() {
 async function fx() { 
  //鬼泣 一起来飞车111
  result +=await sw(167)
- for (id of [168,67,141,142]) {
+ for (id of [67,141,142]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 //50黎明觉醒 明日之后127 138炉石 //136重返帝国
@@ -362,7 +362,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-    await un()
+    //await un()
     //zn5()
    // await cfm2()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
