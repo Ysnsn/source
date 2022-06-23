@@ -389,7 +389,7 @@ async function other() {
      await gt()
     }
     
-    for (id of [58,57]){
+    for (id of [57]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
