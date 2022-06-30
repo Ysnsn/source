@@ -337,7 +337,7 @@ async function zn5() {
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
- result +=await sw(142,170,169,167)
+ result +=await sw(171,142,170,169,167)
  for (id of [164,67,141]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
@@ -372,7 +372,7 @@ async function other() {
    await lottery("lottery2", 8, [1, 2, 3, 4, 5, 6,7,8],"\n[120120]") 
    await lottery("lottery2", 9, [1, 2, 3, 4],"\n[130130]") 
    
-    await lottery("lottery2", 3, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[41616]") 
+    //await lottery("lottery2", 3, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[41616]") 
    // await lottery("lottery2", 5, [1, 2, 3, 4, 5, 6, 7],"\n[037037]") 
     await lottery("lottery2", 6, [1, 2, 3, 4, 5, 6,8],"\n[72020]") 
     
