@@ -333,23 +333,56 @@ async function zn5() {
       }
       console.log('\n--------5周年活动结束--------\n')
 }
+async function shujia(){
+  msg = ""
+  s= "2022shujia/m"
+  await get(s, "login")
+  await get(s, "gofuli&resure=1")
+  await get(s, "lingqushare&resure=0")
+  await get(s, "share")
+  await get(s, "gozhongcao&resure=1")
+  await get(s, "xinshou&resure=1")
+  let res = await $http.get(
+        "https://huodong3.3839.com/n/hykb/2022shujia/m/index.php"
+    );
+    str1 = res.data.match(/green shiwan(\d+)/g);
+    str = res.data.match(/green yygameid-(\d+)/g);
+    for (id of str1) {
+        await get(s, "playgame&gameid=" + id.split("wan")[1])
+    }
+    await sleep(1000)
+    for (id of str) {
+        //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
+        await get(s, "lingquyuyue&gameid=" + id.split("-")[1])
+    }
+    for (id of str1) {
+        await get(s, "lingqushiwan&gameid=" + id.split("n")[2])
+        //await get(s, "lingquyuyue&gameid=" + id.split("-")[1])
+    }
+ let info = await get(s, 'login',true)
+  rr= info.config.tizhong
+  for (i = 0; i < rr; i++) {
+   await get(s, "chouqu")
+   }
+      //查询
+ let inf = await get(s, 'login',true)
+ if (inf.key == 'ok') {
+        msg = `夏日航海 水晶： [${inf.config.maoqiu}]\n`
+        result += msg
+        console.log(msg)
+ }
+ console.log('\n--------航海结束-------\n')
+ 
+}
 
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
- result +=await sw(171,142,170,169,167)
- for (id of [164,67,141]) {
+ result +=await sw(171,142)
+ for (id of [164,141]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
-//50黎明觉醒 明日之后127 138炉石 //136重返帝国
- //魔力宝贝141
- //144幻塔
- //result += await sw2(133) //荣耀新三国133,134
-   //三国无双125 128  哈利波特45 132 134
- //result += await sw2(50)  //镇魂街67     王牌115
-// result += await sw3(124)   122黑月
-//139数码宝贝
-/*
+
  for (id of [154,155]) {
    result +=await sw3(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
@@ -362,14 +395,12 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-    //await un()
-    //zn5()
-   // await cfm2()
+    await shujia()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
   //  await lottery("lottery", 53, [1, 2, 3, 4],"\n[526006]") 
    await lottery("lottery2", 12, [1, 2, 3, 4],"\n[150150]") 
    //await lottery("lottery2", 11, [1, 2, 3, 4],"\n[155155]") 
-   await lottery("lottery2", 8, [1, 2, 3, 4, 5, 6,7,8],"\n[120120]") 
+   //await lottery("lottery2", 8, [1, 2, 3, 4, 5, 6,7,8],"\n[120120]") 
    await lottery("lottery2", 9, [1, 2, 3, 4],"\n[130130]") 
    
     //await lottery("lottery2", 3, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[41616]") 
@@ -388,11 +419,12 @@ async function other() {
      console.log("榜单游戏\n\n")
      await gt()
     }
-    
-    for (id of [58,57]){
+    /*
+    for (id of [57]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
+    */
     //await glist(4)
 
 }
