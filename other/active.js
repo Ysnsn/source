@@ -342,6 +342,9 @@ async function shujia(){
   await get(s, "share")
   await get(s, "gozhongcao&resure=1")
   await get(s, "xinshou&resure=1")
+  await get(s,"lingqulicheng&i=1")
+  await get(s,"lingqulicheng&i=2")
+  await get(s,"lingqulicheng&i=3")
   let res = await $http.get(
         "https://huodong3.3839.com/n/hykb/2022shujia/m/index.php"
     );
@@ -367,7 +370,7 @@ async function shujia(){
       //查询
  let inf = await get(s, 'login',true)
  if (inf.key == 'ok') {
-        msg = `夏日航海 水晶： [${inf.config.maoqiu}]\n`
+        msg = `\n夏日航海 水晶： [${inf.config.maoqiu}]`
         result += msg
         console.log(msg)
  }
@@ -413,9 +416,7 @@ async function other() {
     await lottery("lottery", 4, [1, 2, 3, 4, 5, 6, 8,14,12],"\n补给箱[25525]") //25525
     await lottery("lottery", 3, [1, 2, 3, 6, 7, 8, 14,12],"\n宝石[79979]")//79979
     */
-        
-    
-    for (i = 0; i < 3; i++) {
+   for (i = 0; i < 3; i++) {
      console.log("榜单游戏\n\n")
      await gt()
     }
