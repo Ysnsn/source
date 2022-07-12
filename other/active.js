@@ -385,7 +385,7 @@ async function shujia(){
 async function fx() { 
  //鬼泣 一起来飞车111
  result +=await sw(171,142)
- for (id of [164,141]) {
+ for (id of [141]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 /*
