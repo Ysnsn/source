@@ -424,12 +424,12 @@ async function other() {
      console.log("榜单游戏\n\n")
      await gt()
     }
-    /*
-    for (id of [57]){
+    
+    for (id of [59]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    */
+    
     //await glist(4)
 
 }
