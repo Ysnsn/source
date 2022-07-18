@@ -384,7 +384,7 @@ async function shujia(){
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
- result +=await sw(142)
+// result +=await sw(142)
  for (id of [141]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
