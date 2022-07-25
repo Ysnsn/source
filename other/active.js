@@ -401,7 +401,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-    await shujia()
+    //await shujia()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 57, [1, 2, 3, 4,5],"\n[220713]") 
 //    await lottery("lottery", 56, [1, 2, 3, 4,6],"\n[533221]") 
