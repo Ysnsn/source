@@ -358,14 +358,15 @@ async function other() {
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     await lottery("lottery", 57, [1, 2, 3, 4,5],"\n[220713]") 
     await lottery("lottery", 60, [1, 2, 3, 4,7],"\n[20220726]") 
-    await lottery("lottery2", 12, [1, 2, 3, 4],"\n[150150]") 
-   //await lottery("lottery2", 11, [1, 2, 3, 4],"\n[155155]") 
+    await lottery("lottery2", 12, [1, 2, 3, 4,5],"\n[150150]") 
+    await lottery("lottery2", 13, [1, 2, 3, 4,5],"\n[730730]") 
+  //await lottery("lottery2", 11, [1, 2, 3, 4],"\n[155155]") 
    //await lottery("lottery2", 8, [1, 2, 3, 4, 5, 6,7,8],"\n[120120]") 
    await lottery("lottery2", 9, [1, 2, 3, 4],"\n[130130]") 
    
     //await lottery("lottery2", 3, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[41616]") 
    // await lottery("lottery2", 5, [1, 2, 3, 4, 5, 6, 7],"\n[037037]") 
-    await lottery("lottery2", 6, [1, 2, 3, 4, 5, 6,8],"\n[72020]") 
+    //await lottery("lottery2", 6, [1, 2, 3, 4, 5, 6,8],"\n[72020]") 
     
     //await lottery("lottery2", 1, [1, 2, 3, 4, 5, 6, 7, 8, 9],"\n[331330]") 
     /*
