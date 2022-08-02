@@ -355,15 +355,16 @@ async function yyh(){
         "https://huodong3.3839.com/n/hykb/2022yyh/m/index.php"
     );
     str1 = res.data.match(/green shiwan(\d+)/g);
-    str = res.data.match(/green yygameid-(\d+)/g);
+   // str = res.data.match(/green yygameid-(\d+)/g);
     for (id of str1) {
         await get(s, "playgame&gameid=" + id.split("wan")[1])
     }
     await sleep(1000)
+    /*
     for (id of str) {
         //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
         await get(s, "lingquyuyue&gameid=" + id.split("-")[1])
-    }
+    }*/
     for (id of str1) {
         await get(s, "lingqushiwan&gameid=" + id.split("n")[2])
         //await get(s, "lingquyuyue&gameid=" + id.split("-")[1])
