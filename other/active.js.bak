@@ -334,7 +334,25 @@ async function zn5() {
       console.log('\n--------5周年活动结束--------\n')
 }
 
-
+async function xpj(){
+  msg = ""
+  s= "2022xinpinjie"
+  await get(s, "login")
+  await get(s, "addjifen&id=2&isdown=0")
+  await get(s, "checkfx")
+  await get(s, "addjifen&id=3&isdown=0")
+  await get(s, "shiwan&gid=115866")
+  await get(s, "shiwan&gid=139010")
+  
+  await get(s, "addjifen&id=4&isdown=1")
+  await get(s, "addjifen&id=15&isdown=1")
+  let inf = await get(s, 'login',true)
+  if (inf.key == 'ok') {
+        msg = `\n夏日游园会： [${inf.config.syjifen}]`
+        result += msg
+        console.log(msg)
+ }
+}
 
 async function yyh(){
   msg = ""
@@ -407,8 +425,10 @@ async function other() {
     await fx()
     await sleep(5000)
     await yyh()
+    await xpj()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
-    await lottery("lottery", 62, [1, 2, 3, 4,5],"\n[220713]") 
+    await lottery("lottery", 62, [1, 2, 3, 4,5],"\n[220805]") 
+    await lottery("lottery", 61, [1, 2, 3, 4,5],"\n[866668]") 
     await lottery("lottery", 57, [1, 2, 3, 4,5],"\n[220713]") 
     await lottery("lottery", 60, [1, 2, 3, 4,7],"\n[20220726]") 
     await lottery("lottery2", 12, [1, 2, 3, 4,5],"\n[150150]") 
