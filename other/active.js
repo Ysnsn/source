@@ -346,6 +346,7 @@ async function xpj(){
   
   await get(s, "addjifen&id=4&isdown=1")
   await get(s, "addjifen&id=15&isdown=1")
+  await get(s, "choujiang")
   let inf = await get(s, 'login',true)
   if (inf.key == 'ok') {
         msg = `\n新品会积分： [${inf.config.syjifen}]`
