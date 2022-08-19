@@ -408,11 +408,11 @@ async function yyh(){
 async function fx() { 
  //鬼泣 一起来飞车111
  result +=await sw(173)
- /*
- for (id of []) {
+ 
+ for (id of [174]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
-
+/*
  for (id of [154,155]) {
    result +=await sw3(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
@@ -429,9 +429,9 @@ async function other() {
     await xpj()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lottery", 62, [1, 2, 3, 4,5],"\n[220805]") 
-    await lottery("lottery", 61, [1, 2, 3, 4,5],"\n[866668]") 
+  //  await lottery("lottery", 61, [1, 2, 3, 4,5],"\n[866668]") 
 //    await lottery("lottery", 57, [1, 2, 3, 4,5],"\n[220713]") 
-    await lottery("lottery", 60, [1, 2, 3, 4,7],"\n[20220726]") 
+  //  await lottery("lottery", 60, [1, 2, 3, 4,7],"\n[20220726]") 
     await lottery("lottery2", 12, [1, 2, 3, 4,5],"\n[150150]") 
     await lottery("lottery2", 13, [1, 2, 3, 4,5],"\n[730730]") 
   //await lottery("lottery2", 11, [1, 2, 3, 4],"\n[155155]") 
