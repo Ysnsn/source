@@ -429,7 +429,7 @@ async function other() {
    // await xpj()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
-    //await lottery("lottery", 64, [1],"\n[917321]") 
+    await lottery("lottery", 65, [1,2,3,4,5],"\n[988899]") 
   //  await lottery("lottery", 61, [1, 2, 3, 4,5],"\n[866668]") 
 //    await lottery("lottery", 57, [1, 2, 3, 4,5],"\n[220713]") 
   //  await lottery("lottery", 60, [1, 2, 3, 4,7],"\n[20220726]") 
