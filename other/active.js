@@ -434,7 +434,7 @@ async function other() {
 //    await lottery("lottery", 57, [1, 2, 3, 4,5],"\n[220713]") 
   //  await lottery("lottery", 60, [1, 2, 3, 4,7],"\n[20220726]") 
     await lottery("lottery2", 12, [1, 2, 3, 4,5],"\n[150150]") 
-    await lottery("lottery2", 13, [1, 2, 3, 4,5],"\n[730730]") 
+    //await lottery("lottery2", 13, [1, 2, 3, 4,5],"\n[730730]") 
   //await lottery("lottery2", 11, [1, 2, 3, 4],"\n[155155]") 
    //await lottery("lottery2", 8, [1, 2, 3, 4, 5, 6,7,8],"\n[120120]") 
    //await lottery("lottery2", 9, [1, 2, 3, 4],"\n[130130]") 
@@ -453,12 +453,12 @@ async function other() {
      console.log("榜单游戏\n\n")
      await gt()
     }
-    /*
-    for (id of [59]){
+    
+    for (id of [60]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    */
+    
     await glist(5)
 
 }

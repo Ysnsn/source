@@ -409,7 +409,7 @@ async function fx() {
  //鬼泣 一起来飞车111
  //result +=await sw(173)
  
- for (id of [174,175]) {
+ for (id of [174,175,176]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 /*
@@ -453,12 +453,12 @@ async function other() {
      console.log("榜单游戏\n\n")
      await gt()
     }
-    /*
-    for (id of [59]){
+    
+    for (id of [60]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    */
+    
     await glist(5)
 
 }
