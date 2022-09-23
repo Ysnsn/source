@@ -234,6 +234,32 @@ async function un(){
   result += prize
   console.log(prize)
  }
+async function un1(){
+ prize= "\n金秋: "
+ s= "universal"
+ await get(s,"login&comm_id=8")
+ for (i of [136127,60881,63681,83294] ) {
+ await get(s, `taskGamePlayTime&comm_id=8&gameid=${i}`)
+ }
+ for (id of [57,58,59,60,61,62] ) {
+  await get("universal",`completeTask&comm_id=8&id=${id}`)
+    await get("universal",`getTaskPrize&comm_id=8&id=${id}`)
+ }
+ await get(s,"share&comm_id=8&share_type=task&task_id=62")
+ for (i = 0; i < 3; i++) {
+  let inf = await get("universal","getLuckyPrize&comm_id=8")
+  if (inf.key == 'ok') {
+        prize += inf.name+ '-'
+        result += prize
+        console.log(prize)
+   }else{
+    prize +="-无-"
+    result += prize
+    console.log(prize)
+    break
+    }
+}
+}
 
 async function cfm2(){
   prize="\n穿越火线: "
@@ -425,7 +451,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-  //  await yyh()
+    await un1()
    // await xpj()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
@@ -461,6 +487,6 @@ async function other() {
      result += await jhy(id)
     }
     
-    await glist(5)
+    //await glist(5)
 
 }
