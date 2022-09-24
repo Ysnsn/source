@@ -245,19 +245,19 @@ async function un1(){
   await get("universal",`completeTask&comm_id=8&id=${id}`)
     await get("universal",`getTaskPrize&comm_id=8&id=${id}`)
  }
- await get(s,"share&comm_id=8&share_type=task&task_id=62")
- for (i = 0; i < 3; i++) {
+  await get(s,"share&comm_id=8&share_type=task&task_id=62")
+  for (i = 0; i < 3; i++) {
   let inf = await get("universal","getLuckyPrize&comm_id=8")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
-        result += prize
+      //  result += prize
         console.log(prize)
    }else{
     prize +="-无-"
-    result += prize
     console.log(prize)
     break
-    }
+   }
+   result += prize
 }
 }
 
