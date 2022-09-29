@@ -245,20 +245,49 @@ async function un1(){
   await get("universal",`completeTask&comm_id=8&id=${id}`)
     await get("universal",`getTaskPrize&comm_id=8&id=${id}`)
  }
- await get(s,"share&comm_id=8&share_type=task&task_id=62")
- for (i = 0; i < 3; i++) {
+  await get(s,"share&comm_id=8&share_type=task&task_id=62")
+  for (i = 0; i < 3; i++) {
   let inf = await get("universal","getLuckyPrize&comm_id=8")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
-        result += prize
+      //  result += prize
         console.log(prize)
    }else{
     prize +="-无-"
-    result += prize
+    console.log(prize)
+    break
+   }
+   }
+   result += prize
+   
+
+}
+async function un2(){
+ prize= "\n原神: "
+ s= "universal"
+ await get(s,"login&comm_id=9")
+ await get(s,"signIn&comm_id=9")
+ await get(s,"signIn&comm_id=9")
+ await get(s,"share&comm_id=9&share_type=task&task_id=56")
+ await get(s,"taskGamePlayTime&comm_id=9&gameid=106235")
+ for (id of [52,53,65,81,56] ) {
+  await get("universal",`completeTask&comm_id=9&id=${id}`)
+    await get("universal",`getTaskPrize&comm_id=9&id=${id}`)
+ }
+ for (i = 0; i < 3; i++) {
+  let inf = await get("universal","getLuckyPrize&comm_id=9")
+  if (inf.key == 'ok') {
+        prize += inf.name+ '-'
+        
+        console.log(prize)
+   }else{
+    prize +="-无-"
+    
     console.log(prize)
     break
     }
-}
+   }
+   result += prize
 }
 
 async function cfm2(){
@@ -433,7 +462,7 @@ async function yyh(){
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
- //result +=await sw(173)
+ result +=await sw(177)
  
  for (id of [174,176]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
@@ -452,6 +481,7 @@ async function other() {
     await fx()
     await sleep(5000)
     await un1()
+    await un2()
    // await xpj()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
