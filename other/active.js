@@ -210,7 +210,19 @@ async function glist(id) {
 async function un1(){
  prize= "\n金秋: "
  s= "universal"
- await get(s,"login&comm_id=8")
+ await get(s,"login&comm_id=8") 
+ let res = await get("universal","getAllTasklist&comm_id=8");
+    str1 = res.list.match(/data-task_id="(\d+)"/g);
+    str = res.list.match(/data-gameid="(\d+)"/g);
+ //console.log(str)
+ for (id of str) {
+  await get(s, "taskGamePlayTime&comm_id=8&gameid=" + id.split('"')[1])
+}
+ for (id of str1) {
+   await get("universal","completeTask&comm_id=8&id=" + id.split('"')[1])
+    await get("universal","getTaskPrize&comm_id=8&id=" + id.split('"')[1])
+ }
+ 
  for (i of [136127,60881,63681,83294] ) {
  await get(s, `taskGamePlayTime&comm_id=8&gameid=${i}`)
  }
@@ -238,7 +250,7 @@ async function un2(){
  s= "universal"
  await get(s,"login&comm_id=9")
  await get(s,"signIn&comm_id=9")
- await get(s,"signIn&comm_id=9")
+ await get(s,"signPost&comm_id=9&id=72")
  await get(s,"share&comm_id=9&share_type=task&task_id=56")
  await get(s,"taskGamePlayTime&comm_id=9&gameid=106235")
  for (id of [52,53,65,81,56] ) {
