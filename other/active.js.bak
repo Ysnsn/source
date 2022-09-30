@@ -210,7 +210,19 @@ async function glist(id) {
 async function un1(){
  prize= "\n金秋: "
  s= "universal"
- await get(s,"login&comm_id=8")
+ await get(s,"login&comm_id=8") 
+ let res = await get("universal","getAllTasklist&comm_id=8");
+    str1 = res.list.match(/data-task_id="(\d+)"/g);
+    str = res.list.match(/data-gameid="(\d+)"/g);
+ //console.log(str)
+ for (id of str) {
+  await get(s, "taskGamePlayTime&comm_id=8&gameid=" + id.split('"')[1])
+}
+ for (id of str1) {
+   await get("universal","completeTask&comm_id=8&id=" + id.split('"')[1])
+    await get("universal","getTaskPrize&comm_id=8&id=" + id.split('"')[1])
+ }
+ 
  for (i of [136127,60881,63681,83294] ) {
  await get(s, `taskGamePlayTime&comm_id=8&gameid=${i}`)
  }
@@ -333,7 +345,22 @@ async function zn5() {
       console.log('\n--------5周年活动结束--------\n')
 }
 
-
+async function ce(){
+ s= "celebrate"
+ await get(s,"login")
+ await get(s,"getTasklist")
+ await get(s,"share")
+ await get(s,"share")
+ await get(s,"getBmhReward")
+ await get(s,"toReply&content=快快快点吧快乐！！！快点了乐乐乐快乐快乐大本营&vsersionCode=282")
+ await get(s,"completeTask&id=1006")
+ await get(s,"isRead")
+ await get(s,"getMedal")
+ let res= await get(s,"login")
+ yh = "\n烟花：" + res.config.fireworks
+ console.log(yh)
+ result += yh
+}
 
 
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
@@ -357,6 +384,7 @@ async function other() {
     await sleep(5000)
     await un1()
     await un2()
+    await ce()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
     await lottery("lottery", 69, [1,2,3,4],"\n[922001]") 

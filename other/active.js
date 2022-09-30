@@ -345,7 +345,22 @@ async function zn5() {
       console.log('\n--------5周年活动结束--------\n')
 }
 
-
+async function ce(){
+ s= "celebrate"
+ await get(s,"login")
+ await get(s,"getTasklist")
+ await get(s,"share")
+ await get(s,"share")
+ await get(s,"getBmhReward")
+ await get(s,"toReply&content=快快快点吧快乐！！！快点了乐乐乐快乐快乐大本营&vsersionCode=282")
+ await get(s,"completeTask&id=1006")
+ await get(s,"isRead")
+ await get(s,"getMedal")
+ let res= await get(s,"login")
+ yh = "\n烟花：" + res.config.fireworks
+ console.log(yh)
+ result += yh
+}
 
 
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
@@ -369,6 +384,7 @@ async function other() {
     await sleep(5000)
     await un1()
     await un2()
+    await ce()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
     await lottery("lottery", 69, [1,2,3,4],"\n[922001]") 
@@ -384,7 +400,7 @@ async function other() {
      await gt()
     }
     
-    for (id of [61,60]){
+    for (id of [61]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
