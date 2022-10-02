@@ -251,6 +251,9 @@ async function un2(){
  await get(s,"login&comm_id=9")
  await get(s,"signIn&comm_id=9")
  await get(s,"signPost&comm_id=9&id=72")
+ await get(s,"signLuckyPost&comm_id=9&id=81")
+ await get(s, "signLuckyPost&comm_id=9&id=83")
+ 
  await get(s,"share&comm_id=9&share_type=task&task_id=56")
  await get(s,"taskGamePlayTime&comm_id=9&gameid=106235")
  for (id of [52,53,65,81,56] ) {
@@ -273,77 +276,6 @@ async function un2(){
    result += prize
 }
 
-
-
-async function xinnian() {
-    aid = "2022xinnian/m"
-    await get(aid, "login")
-    await get(aid, "giftcode&shareCode=da765de95024f")
-    await get(aid, "gofuli&resure=1")
-    await get(aid, "share")
-    await get(aid, "gozhongcao&resure=1")
-    await get(aid, "xinshou&resure=1")
-    await get(aid, "guangczzl")
-    await get(aid,"guang&resure=1")
-    let res = await $http.get(
-        "https://huodong3.3839.com/n/hykb/2022xinnian/m/index.php"
-    );
-    str1 = res.data.match(/btn shiwan(\d+)/g);
-    str = res.data.match(/btn yygameid-(\d+)/g);
-    for (id of str1) {
-        await get(aid, "playgame&gameid=" + id.split("wan")[1])
-    }
-    await sleep(1000)
-    for (id of str) {
-        //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
-        await get(aid, "lingquyuyue&gameid=" + id.split("-")[1])
-    }  
-    for (i of [2,3,4]){
-          await get(aid, "lingqushiwan&gameid=" + str1[i].split("wan")[1])
-        }
-    let info = await get(aid, "login")
-    if (info.key == "ok") {
-        msg = `\n【庙会】：福气[${info.config.tizhong}]  爆珠[${info.config.maoqiu}]`
-        result += msg
-        console.log(msg)
-    }
-}
-
-
-async function zn5() {
-      console.log('\n--------5周年活动开始--------\n')
-      aid = '5zhounian/m'
-      await get(aid, 'share')
-      for (i = 5; i < 14; i++) {
-        await get(aid, 'DailyAppJump&id=' + i)
-        await get(aid, 'DailyAppLing&id=' + i)
-      }
-
-      pn = ''
-      info1 = await get(aid, 'login',true)
-      if (info1.key == 'ok') {
-        mh = info1.config.mh
-        console.log('可抽取盲盒次数：' + mh)
-        //开盲盒
-        for (k = 0; k < mh; k++) {
-          let cq = await get(aid, 'chouqu')
-          if (cq.key == 'ok') pn += cq.prizename + '  '
-        }
-        //勋章
-        if (info1.config.liuyanling != 1) {
-          await get(aid, 'chaundi&liuyan=五周年快乐快乐周年快乐(ง+•̀_•́)ง&resource=0')
-          await get(aid, 'lingquliuyan')
-        }
-      }
-      let info = await get(aid, 'login',true)
-      //查询
-      if (info.key == 'ok') {
-        msg = `\n5周年：卡片 ${info.config.mykpnum} 奖励 ${pn}`
-        result += msg
-        console.log(msg)
-      }
-      console.log('\n--------5周年活动结束--------\n')
-}
 
 async function ce(){
  s= "celebrate"
