@@ -249,6 +249,7 @@ async function un1(){
    }
    result += prize
 }
+
 async function un2(){
  prize= "\n原神: "
  s= "universal"

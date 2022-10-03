@@ -243,9 +243,9 @@ async function un1(){
     break
    }
    }
-  let res = await get(s,"login&comm_id=8")
-  if (res.key == 'ok') {
-    prize += inf.config.user_score
+  let ress = await get(s,"login&comm_id=8")
+  if (ress.key == 'ok') {
+    prize += ress.config.user_score
    }
    result += prize
 }
