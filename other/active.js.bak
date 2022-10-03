@@ -277,9 +277,6 @@ async function un2(){
 }
 
 
-
-
-
 async function ce(){
  s= "celebrate"
  await get(s,"login")

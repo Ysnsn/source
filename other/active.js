@@ -253,6 +253,7 @@ async function un2(){
  await get(s,"signPost&comm_id=9&id=72")
  await get(s,"signLuckyPost&comm_id=9&id=81")
  await get(s, "signLuckyPost&comm_id=9&id=83")
+ await get(s, "signLuckyPost&comm_id=9&id=87")
  
  await get(s,"share&comm_id=9&share_type=task&task_id=56")
  await get(s,"taskGamePlayTime&comm_id=9&gameid=106235")
