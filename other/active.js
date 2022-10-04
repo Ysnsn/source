@@ -294,6 +294,7 @@ async function ce(){
  await get(s,"isRead")
  await get(s,"getMedal")
  await get(s,"getReward&id=1006") //抽奖次数
+ await get(s,"getReward&id=1004") 
  
  for (i = 0; i < 3; i++) {
   let inf = await get(s,"getLuckyPrize")
