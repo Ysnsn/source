@@ -333,7 +333,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-    await un1()
+    //await un1()
     //await un2()
     await ce()
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
