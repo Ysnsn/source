@@ -343,7 +343,7 @@ async function other() {
     //await lottery("lottery", 67, [1,2,3,4],"\n[923333]") 
     
     //await lottery("lottery", 66, [1, 2, 3, 4,5],"\n[621621]") 
-    await lottery("lottery2", 12, [1, 2, 3, 4,5],"\n[150150]") 
+    await lottery("lottery2", 13, [1, 2, 3, 4,5],"\n[730730]") 
    for (i = 0; i < 3; i++) {
      console.log("榜单游戏\n\n")
      await gt()
