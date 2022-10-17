@@ -335,7 +335,7 @@ async function other() {
     await sleep(5000)
     //await un1()
     //await un2()
-    await ce()
+    
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
     //await lottery("lottery", 69, [1,2,3,4],"\n[922001]") 
