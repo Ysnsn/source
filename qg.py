@@ -1,6 +1,12 @@
 # -*- coding: utf8 -*-
 # python >=3.8
-import requests,json,time,os,yaml,sys,_thread
+
+import requests,json,time,os,yaml,sys
+import asyncio
+import httpx
+import threading
+
+client = httpx.AsyncClient()
 i = sys.argv[1]
 
 file = open("config.yml", 'r', encoding="utf-8")
@@ -12,7 +18,7 @@ scookie = data['hykb'+i]['scookie']
 
 #msg= ""
 
-def get(a,b):
+async def get(a,b):
    
    url= f"https://huodong3.3839.com/n/hykb/{a}/ajax.php"
    headers={
@@ -28,19 +34,29 @@ def get(a,b):
    for i in range(len(b)//2) :
       data[ b[i*2] ] = b[i*2+1]
    data.update(data1)
-   re=requests.post(url ,headers=headers, data=data)
+   re=await client.post(url ,headers=headers, data=data)
    if re.status_code ==200 :
     print(re.json())
     return re.json()
    else :
     print ("这个账号失效了🌚，快去更新吧")
 
-try:
-   _thread.start_new_thread( get, ("celebrate","ac=share") )
-   _thread.start_new_thread( get, ("celebrate","ac=share") )
-   _thread.start_new_thread( get, ("celebrate","ac=share") )
-except:
-   print ("Error: 无法启动线程")
 
-while 1:
-   pass
+async def async_main(url, sign):
+    response = await client.get(url)
+    status_code = response.status_code
+    print(f'async_main: {threading.current_thread()}: {sign}:{status_code}')
+
+
+loop = asyncio.get_event_loop()
+#loop = asyncio.new_event_loop()
+#asyncio.set_event_loop(loop)
+
+#tasks = [async_main(url='http://www.baidu.com', sign=i) for i in range(200)]
+tasks= [get("zhuli","ac=mycode&comm_id=61") for i in range(5)]
+async_start = time.time()
+loop.run_until_complete(asyncio.wait(tasks))
+
+async_end = time.time()
+#loop.close()
+print(async_end - async_start)
