@@ -208,31 +208,32 @@ async function glist(id) {
 }
 
 async function un1(){
- prize= "\n金秋: "
+ prize= "\n光遇: "
  s= "universal"
- await get(s,"login&comm_id=8") 
- let res = await get("universal","getAllTasklist&comm_id=8");
+ await get(s,"login&comm_id=12") 
+ let res = await get("universal","getAllTasklist&comm_id=12");
     str1 = res.list.match(/data-task_id="(\d+)"/g);
     str = res.list.match(/data-gameid="(\d+)"/g);
  //console.log(str)
  for (id of str) {
-  await get(s, "taskGamePlayTime&comm_id=8&gameid=" + id.split('"')[1])
+  await get(s, "taskGamePlayTime&comm_id=12&gameid=" + id.split('"')[1])
 }
  for (id of str1) {
-   await get("universal","completeTask&comm_id=8&id=" + id.split('"')[1])
-    await get("universal","getTaskPrize&comm_id=8&id=" + id.split('"')[1])
+   await get("universal","completeTask&comm_id=12&id=" + id.split('"')[1])
+    await get("universal","getTaskPrize&comm_id=12&id=" + id.split('"')[1])
  }
- 
+ /*
  for (i of [136127,60881,63681,83294] ) {
- await get(s, `taskGamePlayTime&comm_id=8&gameid=${i}`)
+ await get(s, `taskGamePlayTime&comm_id=12&gameid=${i}`)
  }
  for (id of [57,58,59,60,61,62] ) {
-  await get("universal",`completeTask&comm_id=8&id=${id}`)
-    await get("universal",`getTaskPrize&comm_id=8&id=${id}`)
+  await get("universal",`completeTask&comm_id=12&id=${id}`)
+    await get("universal",`getTaskPrize&comm_id=12&id=${id}`)
  }
-  await get(s,"share&comm_id=8&share_type=task&task_id=62")
+ */
+  await get(s,"share&comm_id=12&share_type=task&task_id=62")
   for (i = 0; i < 3; i++) {
-  let inf = await get("universal","getLuckyPrize&comm_id=8")
+  let inf = await get("universal","getLuckyPrize&comm_id=12")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
       //  result += prize
@@ -251,23 +252,23 @@ async function un1(){
 }
 
 async function un2(){
- prize= "\n原神: "
+ prize= "\n光遇: "
  s= "universal"
- await get(s,"login&comm_id=9")
- await get(s,"signIn&comm_id=9")
- await get(s,"signPost&comm_id=9&id=72")
- await get(s,"signLuckyPost&comm_id=9&id=81")
- await get(s, "signLuckyPost&comm_id=9&id=83")
- await get(s, "signLuckyPost&comm_id=9&id=87")
- 
- await get(s,"share&comm_id=9&share_type=task&task_id=56")
- await get(s,"taskGamePlayTime&comm_id=9&gameid=106235")
- for (id of [52,53,65,81,56] ) {
-  await get("universal",`completeTask&comm_id=9&id=${id}`)
-    await get("universal",`getTaskPrize&comm_id=9&id=${id}`)
+ await get(s,"login&comm_id=12")
+ await get(s,"signIn&comm_id=12")
+ /*await get(s,"signPost&comm_id=12&id=72")
+ await get(s,"signLuckyPost&comm_id=12&id=81")
+ await get(s, "signLuckyPost&comm_id=12&id=83")
+ await get(s, "signLuckyPost&comm_id=12&id=87")
+ */
+ await get(s,"share&comm_id=12&share_type=task&task_id=122")
+ //await get(s,"taskGamePlayTime&comm_id=12&gameid=106235")
+ for (id of [126,123,124,122] ) {
+  await get("universal",`completeTask&comm_id=12&id=${id}`)
+    await get("universal",`getTaskPrize&comm_id=12&id=${id}`)
  }
  for (i = 0; i < 3; i++) {
-  let inf = await get("universal","getLuckyPrize&comm_id=9")
+  let inf = await get("universal","getLuckyPrize&comm_id=12")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
         console.log(prize)
@@ -334,12 +335,12 @@ async function other() {
     await fx()
     await sleep(5000)
     //await un1()
-    //await un2()
+    await un2()
     
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
-    //await lottery("lottery", 69, [1,2,3,4],"\n[922001]") 
-    //await lottery("lottery", 68, [1,2,3,4],"\n[922011]") 
+    await lottery("lottery", 70, [1,2,3,4,5,7],"\n[166266]") 
+    await lottery("lottery", 71, [1,2,3,4,6,5,7],"\n[102828]") 
     //await lottery("lottery", 67, [1,2,3,4],"\n[923333]") 
     
     //await lottery("lottery", 66, [1, 2, 3, 4,5],"\n[621621]") 
