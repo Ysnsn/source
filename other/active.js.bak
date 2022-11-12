@@ -292,8 +292,8 @@ async function un3(){
  await get(s, "signLuckyPost&comm_id=12&id=87")
  */
  await get(s,"share&comm_id=11&share_type=task&task_id=122")
- //await get(s,"taskGamePlayTime&comm_id=12&gameid=106235")
- for (id of [126,123,124,122] ) {
+ await get(s,"taskGamePlayTime&comm_id=11&gameid=106235")
+ for (id of [113,114,115,116,117] ) {
   await get("universal",`completeTask&comm_id=11&id=${id}`)
     await get("universal",`getTaskPrize&comm_id=11&id=${id}`)
  }
