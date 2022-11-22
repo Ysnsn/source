@@ -350,7 +350,7 @@ async function fx() {
  //鬼泣 一起来飞车111
 // result +=await sw(177)
  
- for (id of [174,176]) {
+ for (id of [174,176,178]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 /*
