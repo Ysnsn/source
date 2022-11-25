@@ -369,12 +369,12 @@ async function other() {
     
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
-    await lottery("lottery", 70, [1,2,3,4,5,7],"\n[166266]") 
-    await lottery("lottery", 71, [1,2,3,4,6,5,7],"\n[102828]") 
+   // await lottery("lottery", 70, [1,2,3,4,5,7],"\n[166266]") 
+   // await lottery("lottery", 71, [1,2,3,4,6,5,7],"\n[102828]") 
     //await lottery("lottery", 67, [1,2,3,4],"\n[923333]") 
     
     //await lottery("lottery", 66, [1, 2, 3, 4,5],"\n[621621]") 
-    await lottery("lottery2", 13, [1, 2, 3, 4,5],"\n[730730]") 
+   // await lottery("lottery2", 13, [1, 2, 3, 4,5],"\n[730730]") 
    for (i = 0; i < 3; i++) {
      console.log("榜单游戏\n\n")
      await gt()
