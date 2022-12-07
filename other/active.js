@@ -284,21 +284,21 @@ async function un2(){
 async function un3(){
  prize= "\n原神: "
  s= "universal"
- await get(s,"login&comm_id=11")
- await get(s,"signIn&comm_id=11")
+ await get(s,"login&comm_id=16")
+ await get(s,"signIn&comm_id=16")
  /*await get(s,"signPost&comm_id=12&id=72")
  await get(s,"signLuckyPost&comm_id=12&id=81")
  await get(s, "signLuckyPost&comm_id=12&id=83")
  await get(s, "signLuckyPost&comm_id=12&id=87")
  */
- await get(s,"share&comm_id=11&share_type=task&task_id=122")
- await get(s,"taskGamePlayTime&comm_id=11&gameid=106235")
- for (id of [113,114,115,116,117] ) {
-  await get("universal",`completeTask&comm_id=11&id=${id}`)
-    await get("universal",`getTaskPrize&comm_id=11&id=${id}`)
+ await get(s,"share&comm_id=16&share_type=task&task_id=218")
+ await get(s,"taskGamePlayTime&comm_id=16&gameid=106235")
+ for (id of [219,218,217,216,215,214] ) {
+  await get("universal",`completeTask&comm_id=16&id=${id}`)
+    await get("universal",`getTaskPrize&comm_id=16&id=${id}`)
  }
  for (i = 0; i < 3; i++) {
-  let inf = await get("universal","getLuckyPrize&comm_id=11")
+  let inf = await get("universal","getLuckyPrize&comm_id=16")
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
         console.log(prize)
@@ -364,7 +364,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-   // await un3()
+    await un3()
    // await un2()
     
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
