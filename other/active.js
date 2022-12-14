@@ -260,6 +260,7 @@ async function un2(){
  await get(s,"signLuckyPost&comm_id=12&id=81")
  await get(s, "signLuckyPost&comm_id=12&id=83")
  await get(s, "signLuckyPost&comm_id=12&id=87")
+ ac=luckyDraw  ac=getTaskPrize&id=146215
  */
  await get(s,"share&comm_id=12&share_type=task&task_id=122")
  //await get(s,"taskGamePlayTime&comm_id=12&gameid=106235")
@@ -281,24 +282,24 @@ async function un2(){
    result += prize
 }
 
-async function un3(){
+async function un3(id){
  prize= "\n原神: "
  s= "universal"
- await get(s,"login&comm_id=16")
- await get(s,"signIn&comm_id=16")
- /*await get(s,"signPost&comm_id=12&id=72")
- await get(s,"signLuckyPost&comm_id=12&id=81")
- await get(s, "signLuckyPost&comm_id=12&id=83")
- await get(s, "signLuckyPost&comm_id=12&id=87")
- */
- await get(s,"share&comm_id=16&share_type=task&task_id=218")
- await get(s,"taskGamePlayTime&comm_id=16&gameid=106235")
- for (id of [219,218,217,216,215,214] ) {
-  await get("universal",`completeTask&comm_id=16&id=${id}`)
-    await get("universal",`getTaskPrize&comm_id=16&id=${id}`)
+ await get(s,`login&comm_id=${id}`)
+ await get(s,`signIn&comm_id=${id}`)
+ //await get(s,"signPost&comm_id=16&id=206")
+ await get(s,"signLuckyPost&comm_id=16&id=210")
+ //await get(s, "signLuckyPost&comm_id=12&id=83")
+// await get(s, "signLuckyPost&comm_id=12&id=87")
+ 
+ await get(s,`share&comm_id=${id}&share_type=task&task_id=218`)
+ await get(s,`taskGamePlayTime&comm_id=${id}&gameid=106235`)
+ for (ids of [219,218,217,216,215,214] ) {
+  await get("universal",`completeTask&comm_id=${id}&id=${ids}`)
+    await get("universal",`getTaskPrize&comm_id=${id}&id=${ids}`)
  }
  for (i = 0; i < 3; i++) {
-  let inf = await get("universal","getLuckyPrize&comm_id=16")
+  let inf = await get("universal",`getLuckyPrize&comm_id=${id}`)
   if (inf.key == 'ok') {
         prize += inf.name+ '-'
         console.log(prize)
@@ -350,7 +351,7 @@ async function fx() {
  //鬼泣 一起来飞车111
 // result +=await sw(177)
  
- for (id of [174,176,178]) {
+ for (id of [174,176,178,179]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 /*
@@ -364,7 +365,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
-    await un3()
+    await un3(16)
    // await un2()
     
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
