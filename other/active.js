@@ -372,6 +372,56 @@ async function ce(){
 }
 
 
+async function yyh1(){
+  msg = ""
+  s= "2022yyh1/m"
+  await get(s, "login")
+  await get(s, "gofuli&resure=1")
+  await get(s, "lingqushare&resure=0")
+  await get(s, "share")
+  await get(s, "gozhongcao&resure=1")
+  await get(s, "xinshou&resure=1")
+  await get(s, "guang&resure=0")
+  await get(s, "guangczzl")
+  await get(s, "guang&resure=1")
+  await get(s,"lingqulicheng&i=1")
+  await get(s,"lingqulicheng&i=2")
+  await get(s,"lingqulicheng&i=3")
+  let res = await $http.get(
+        "https://huodong3.3839.com/n/hykb/2022yyh1/m/index.php"
+    );
+    str1 = res.data.match(/green shiwan(\d+)/g);
+    str = res.data.match(/green yygameid-(\d+)/g);
+    for (id of str1) {
+        await get(s, "playgame&gameid=" + id.split("wan")[1])
+    }
+    await sleep(1000)
+    
+    for (id of str) {
+        //await get(aid, "lingqushiwan&gameid=" + id.split("_")[2])
+        await get(s, "lingquyuyue&gameid=" + id.split("-")[1])
+    }
+    for (id of str1) {
+        await get(s, "lingqushiwan&gameid=" + id.split("n")[2])
+        //await get(s, "lingquyuyue&gameid=" + id.split("-")[1])
+    }
+ let info = await get(s, 'login',true)
+  rr= info.config.tizhong
+  for (i = 0; i < rr; i++) {
+   await get(s, "chouqu")
+   }
+      //查询
+ let inf = await get(s, 'login',true)
+ if (inf.key == 'ok') {
+        msg = `\n冬日游园会： [${inf.config.maoqiu}]`
+        result += msg
+        console.log(msg)
+ }
+ console.log('\n--------航海结束-------\n')
+ 
+}
+
+
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
@@ -391,6 +441,7 @@ async function fx() {
 async function other() {
     await fx()
     await sleep(5000)
+    await yyh1()
     await un3(16)
     await un4(17)
     
