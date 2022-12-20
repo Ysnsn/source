@@ -408,7 +408,7 @@ async function yyh1(){
  let info = await get(s, 'login',true)
   rr= info.config.tizhong
   for (i = 0; i < rr; i++) {
-   await get(s, "chouqu")
+   await get(s, "chouqu&resure=1")
    }
       //查询
  let inf = await get(s, 'login',true)
