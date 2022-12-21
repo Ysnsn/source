@@ -425,13 +425,13 @@ async function yyh1(){
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
-// result +=await sw(177)
+ result +=await sw(180)
  
- for (id of [174,176,178,179]) {
+ for (id of [174,176,179]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
 /*
- for (id of [154,155]) {
+ for (id of [180]) {
    result +=await sw3(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
  }
  */
