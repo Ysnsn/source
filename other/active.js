@@ -425,6 +425,7 @@ async function yyh1(){
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
+  result +=await sw(182)
  result +=await sw(180)
  
  for (id of [174,179]) {
