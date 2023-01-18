@@ -288,13 +288,13 @@ async function un3(id){
  await get(s,`login&comm_id=${id}`)
  await get(s,`signIn&comm_id=${id}`)
  //await get(s,"signPost&comm_id=16&id=206")
- await get(s,"signLuckyPost&comm_id=16&id=210")
+ //await get(s,"signLuckyPost&comm_id=22&id=210")
  //await get(s, "signLuckyPost&comm_id=12&id=83")
 // await get(s, "signLuckyPost&comm_id=12&id=87")
  
- await get(s,`share&comm_id=${id}&share_type=task&task_id=218`)
+ await get(s,`share&comm_id=${id}&share_type=task&task_id=311`)
  await get(s,`taskGamePlayTime&comm_id=${id}&gameid=106235`)
- for (ids of [219,218,217,216,215,214] ) {
+ for (ids of [311,310,326,308,307,306] ) {
   await get("universal",`completeTask&comm_id=${id}&id=${ids}`)
     await get("universal",`getTaskPrize&comm_id=${id}&id=${ids}`)
  }
@@ -313,11 +313,12 @@ async function un3(id){
 }
 
 async function un4(ids){
-  prize= "\n光子: "
+  prize= "\n光遇: "
   s= "universal"
   await get(s,`login&comm_id=${ids}`)
-  await get(s, "share&comm_id=17&share_type=task&task_id=261")
-  let res = await get("universal","getAllTasklist&comm_id=17");
+  await get(s,`signIn&comm_id=${ids}`)
+  await get(s,`share&comm_id=${ids}&share_type=task&task_id=300`)
+  let res = await get("universal","getAllTasklist&comm_id=21");
   str = res.all.Daily.match(/completeTask_(\d+)/g);
   for (id of str) {
     id = id.split('_')[1]
@@ -337,7 +338,32 @@ async function un4(ids){
    }
    result += prize
 }
-
+async function un5(ids){
+  prize= "\nGO兔: "
+  s= "universal"
+  await get(s,`login&comm_id=${ids}`)
+  await get(s,`signIn&comm_id=${ids}`)
+  await get(s,`share&comm_id=${ids}&share_type=task&task_id=295`)
+  let res = await get("universal","getAllTasklist&comm_id=20");
+  str = res.all.Daily.match(/completeTask_(\d+)/g);
+  for (id of str) {
+    id = id.split('_')[1]
+    await get("universal",`completeTask&comm_id=${ids}&id=${id}`)
+    await get("universal",`getTaskPrize&comm_id=${ids}&id=${id}`)
+ }
+ for (i = 0; i < 3; i++) {
+  let inf = await get("universal",`getLuckyPrize&comm_id=${ids}`)
+  if (inf.key == 'ok') {
+        prize += inf.name+ '-'
+        console.log(prize)
+   }else{
+    prize +="-无-"
+    console.log(prize)
+    break
+    }
+   }
+   result += prize
+}
 
 async function ce(){
  s= "celebrate"
@@ -443,9 +469,9 @@ async function other() {
     await fx()
     await sleep(5000)
     //await yyh1()
-  //  await un3(16)
-   // await un4(17)
-    
+    await un3(22)
+    await un4(21)
+    await un5(20)
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
    // await lottery("lottery", 70, [1,2,3,4,5,7],"\n[166266]") 
