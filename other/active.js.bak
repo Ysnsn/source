@@ -313,7 +313,7 @@ async function un3(id){
 }
 
 async function un4(ids){
-  prize= "\n光子: "
+  prize= "\n光遇: "
   s= "universal"
   await get(s,`login&comm_id=${ids}`)
   await get(s,`signIn&comm_id=${ids}`)
@@ -338,8 +338,8 @@ async function un4(ids){
    }
    result += prize
 }
-async function un4(ids){
-  prize= "\n光子: "
+async function un5(ids){
+  prize= "\nGO兔: "
   s= "universal"
   await get(s,`login&comm_id=${ids}`)
   await get(s,`signIn&comm_id=${ids}`)
