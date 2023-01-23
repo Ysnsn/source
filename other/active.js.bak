@@ -484,6 +484,8 @@ async function other() {
      console.log("榜单游戏\n\n")
      await gt()
     }
+    await get("2023sfshare", "login")
+    await get("2023sfshare", "share")
     /*
     for (id of [61]){
      console.log(" 助力抽奖通用\n\n")
