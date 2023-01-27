@@ -451,7 +451,7 @@ async function yyh1(){
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
-  result +=await sw(182)
+//  result +=await sw(182)
  result +=await sw(180)
 // result +=await sw(183)
  for (id of [174,179]) {
@@ -469,9 +469,9 @@ async function other() {
     await fx()
     await sleep(5000)
     //await yyh1()
-    await un3(22)
+//    await un3(22)
     await un4(21)
-    await un5(20)
+//    await un5(20)
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
    // await lottery("lottery", 70, [1,2,3,4,5,7],"\n[166266]") 
