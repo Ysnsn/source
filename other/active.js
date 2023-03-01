@@ -345,7 +345,7 @@ async function un5(ids){
   await get(s,`login&comm_id=${ids}`)
   await get(s,`signIn&comm_id=${ids}`)
   await get(s,`share&comm_id=${ids}&share_type=task&task_id=391`)
-  let res = await get("universal",`getAllTasklist&comm_id=${ids});
+  let res = await get("universal",`getAllTasklist&comm_id=${ids}`);
   str = res.all.Daily.match(/completeTask_(\d+)/g);
   for (id of str) {
     id = id.split('_')[1]
