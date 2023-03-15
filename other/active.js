@@ -344,7 +344,7 @@ async function un5(ids){
   s= "universal"
   await get(s,`login&comm_id=${ids}`)
   await get(s,`signIn&comm_id=${ids}`)
-  await get(s,`share&comm_id=${ids}&share_type=task&task_id=391`)
+  await get(s,`share&comm_id=${ids}&share_type=task&task_id=397`)
   let res = await get("universal",`getAllTasklist&comm_id=${ids}`);
   str = res.all.Daily.match(/completeTask_(\d+)/g);
   for (id of str) {
@@ -452,7 +452,7 @@ async function yyh1(){
 //游戏分享抽奖 https://huodong3.3839.com/n/hykb/yuyue2020/m/?comm_id=17
 async function fx() { 
  //鬼泣 一起来飞车111
-//  result +=await sw(182)
+ result +=await sw(186)
 // result +=await sw(180)
 // result +=await sw(183)
  for (id of [174]) {
@@ -471,7 +471,7 @@ async function other() {
     await sleep(5000)
     //await yyh1()
    //await un3(25)
-    await un4(25)
+    await un5(29)
     await un5(26)
     console.log("粉丝福利任务开始,记得去app中首页分别搜索进行qq号绑定哦！！")
     //await lottery("lotterysj", 1,[15,11,10,13,3,4,6], "\n[220824]")
@@ -487,12 +487,12 @@ async function other() {
     }
    // await get("2023sfshare", "login")
    // await get("2023sfshare", "share")
-    
+    /*
     for (id of [62]){
      console.log(" 助力抽奖通用\n\n")
      result += await jhy(id)
     }
-    
+    */
     //await glist(5)
 
 }
