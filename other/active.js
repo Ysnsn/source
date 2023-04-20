@@ -455,9 +455,9 @@ async function fx() {
  result +=await sw(186)
 // result +=await sw(180)
 // result +=await sw(183)
- for (id of [174]) {
+/* for (id of [174]) {
    result +=await sw2(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
- }
+ }*/
 /*
  for (id of [180]) {
    result +=await sw3(id) //花与剑119 秦时明月世界, 漫威107 120 ,比特114 月神的迷宫121
